@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const port = process.env.PORT || 8080;
 
 const registerRoutes = require('./routes/register');
 
@@ -23,9 +24,9 @@ app.use('/register', registerRoutes);
 
 mongoose
   .connect(
-    'mongodb+srv://manish1:manish@cluster0-gpev2.mongodb.net/test?retryWrites=true'
+    'mongodb+srv://manish1:manish@cluster0-gpev2.mongodb.net/registration?retryWrites=true', { useNewUrlParser: true }
   )
   .then(result => {
-    app.listen(8000);
+    app.listen(port);
   })
   .catch(err => console.log(err));
