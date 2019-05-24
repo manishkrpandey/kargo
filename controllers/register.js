@@ -71,17 +71,14 @@ createNewUser = (req, res, next, isvalid, registrationnew) => {
     registrationnew
       .save()
       .then(result => {
-        console.log('three', isvalid);
         res.status(201).json({
           message: 'User created successfully!',
           registration: result
         });
       })
       .catch(err => {
-        console.log(err);
       });
   } else {
-    console.log('four', isvalid);
     res.status(200).json({
       data: [
         {
