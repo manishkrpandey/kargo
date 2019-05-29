@@ -21,12 +21,12 @@ exports.getPosts = (req, res, next) => {
 
 exports.createPost = async (req, res, next) => {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(422).json({
-      message: 'Validation failed, entered data is incorrect.',
-      errors: errors.array()
-    });
-  }
+  // if (!errors.isEmpty()) {
+  //   return res.status(422).json({
+  //     message: 'Validation failed, entered data is incorrect.',
+  //     errors: errors.array()
+  //   });
+  // }
 
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -41,7 +41,7 @@ exports.createPost = async (req, res, next) => {
   const hasNationalPermit = req.body.hasNationalPermit;
   const allowedStateForTransportation = req.body.allowedStateForTransportation;
   const vehicleSnapshot = req.body.vehicleSnapshot;
-  const dlSanpshot = req.body.dlSanpshot;
+  const dlSnappshot = req.body.dlSnappshot;
   const registrationnew = new registration({
     firstName: firstName,
     lastName: lastName,
@@ -55,7 +55,7 @@ exports.createPost = async (req, res, next) => {
     driversDLNumber: driversDLNumber,
     hasNationalPermit: hasNationalPermit,
     allowedStateForTransportation: allowedStateForTransportation,
-    dlSanpshot: 'images/dl.png',
+    dlSnappshot: 'images/dl.png',
     vehicleSnapshot: vehicleSnapshot
   });
   const isvalid = await registration.find({ "mobileNumber": mobileNumber }).then((res) => {

@@ -27,7 +27,7 @@ mongoose
     'mongodb+srv://manish1:manish@cluster0-gpev2.mongodb.net/registration?retryWrites=true', { useNewUrlParser: true }
   )
   .then(result => {
-    console.log('result',result);
+    // console.log('result',result.connections[0].collections);
     app.listen(port);
   })
   .catch(err => console.log(err));

@@ -58,5 +58,5 @@ module.exports = router;
 // driversDLNumber:driversDLNumber,
 // hasNationalPermit:hasNationalPermit,
 // allowedStateForTransportation:allowedStateForTransportation,
-// dlSanpshot:'images/dl.png',
+// dlSnappshot:'images/dl.png',
 // vehicleSnapshot:vehicleSnapshot

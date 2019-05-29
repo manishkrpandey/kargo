@@ -11,7 +11,7 @@ const registrationSchema = new Schema(
       type: String,
       
     },
-    dlSanpshot: {
+    dlSnappshot: {
       type: String,
     },
     vehicleSnapshot: {
