@@ -21,6 +21,7 @@ exports.getPosts = (req, res, next) => {
 
 exports.createPost = async (req, res, next) => {
   const errors = validationResult(req);
+  console.log(req.body);
   // if (!errors.isEmpty()) {
   //   return res.status(422).json({
   //     message: 'Validation failed, entered data is incorrect.',
@@ -69,6 +70,7 @@ exports.createPost = async (req, res, next) => {
   createNewUser(req, res, next, isvalid, registrationnew);
 };
 createNewUser = (req, res, next, isvalid, registrationnew) => {
+  console.log('inside',req.body);
   if (!isvalid) {
     registrationnew
       .save()
