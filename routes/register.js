@@ -38,6 +38,9 @@ router.post(
       .isLength({ min: 8 }),
     body('allowedStateForTransportation')
       .trim()
+      .isLength({ min: 1 }),
+    body('password')
+      .trim()
       .isLength({ min: 1 })
   ],
   registerController.createPost

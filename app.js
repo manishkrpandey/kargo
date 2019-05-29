@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 8080;
 
 const registerRoutes = require('./routes/register');
+const loginRoutes = require('./routes/login');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/register', registerRoutes);
+app.use('/account',loginRoutes);
 
 mongoose
   .connect(
@@ -31,3 +33,5 @@ mongoose
     app.listen(port);
   })
   .catch(err => console.log(err));
+
+

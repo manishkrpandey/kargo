@@ -54,6 +54,9 @@ const registrationSchema = new Schema(
     allowedStateForTransportation: {
       type: Object,
     },
+    password: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

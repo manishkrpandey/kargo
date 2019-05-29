@@ -42,6 +42,7 @@ exports.createPost = async (req, res, next) => {
   const allowedStateForTransportation = req.body.allowedStateForTransportation;
   const vehicleSnapshot = req.body.vehicleSnapshot;
   const dlSnappshot = req.body.dlSnappshot;
+  const password=req.body.password;
   const registrationnew = new registration({
     firstName: firstName,
     lastName: lastName,
@@ -56,7 +57,8 @@ exports.createPost = async (req, res, next) => {
     hasNationalPermit: hasNationalPermit,
     allowedStateForTransportation: allowedStateForTransportation,
     dlSnappshot: 'images/dl.png',
-    vehicleSnapshot: vehicleSnapshot
+    vehicleSnapshot: vehicleSnapshot,
+    password:password
   });
   const isvalid = await registration.find({ "mobileNumber": mobileNumber }).then((res) => {
     if (res.length) {
