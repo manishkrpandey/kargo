@@ -18,7 +18,7 @@ const registrationSchema = new Schema(
       type: String,
     },
     mobileNumber: {
-      type: String,
+      type: Number,
       
     },
     secondaryContact: {
