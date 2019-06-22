@@ -1,25 +1,9 @@
 const { validationResult } = require('express-validator/check');
 
-const registration = require('../models/register');
+const registration = require('../../models/register');
 
-exports.getPosts = (req, res, next) => {
-  res.status(200).json({
-    posts: [
-      {
-        _id: '1',
-        title: 'First Post',
-        content: 'This is the first post!',
-        imageUrl: 'images/duck.jpg',
-        creator: {
-          name: 'Maximilian'
-        },
-        createdAt: new Date()
-      }
-    ]
-  });
-};
 
-exports.createPost = async (req, res, next) => {
+exports.registerNewUserpartone = async (req, res, next) => {
   const errors = validationResult(req);
   console.log(req.body);
   // if (!errors.isEmpty()) {

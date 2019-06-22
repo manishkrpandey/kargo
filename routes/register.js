@@ -1,12 +1,10 @@
 const express = require('express');
 const { body } = require('express-validator/check');
 
-const registerController = require('../controllers/register');
+const registerController = require('../controllers/login/register');
 
 const router = express.Router();
 
-// GET /register/posts
-router.get('/posts', registerController.getPosts);
 
 // POST /register/post
 router.post(
@@ -17,7 +15,7 @@ router.post(
       .isLength({ min: 5 }),
     body('lastName')
       .trim()
-      .isLength({ min: 3}),
+      .isLength({ min: 3 }),
     body('mobileNumber')
       .trim()
       .isLength({ min: 10 }),
@@ -43,7 +41,7 @@ router.post(
       .trim()
       .isLength({ min: 1 })
   ],
-  registerController.createPost
+  registerController.registerNewUserpartone
 );
 
 module.exports = router;

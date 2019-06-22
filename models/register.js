@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 
 const registrationSchema = new Schema(
   {
-    firstName: {
-      type: String,
-      
-    },
-    lastName: {
+    fullName: {
       type: String,
       
     },
@@ -56,6 +52,9 @@ const registrationSchema = new Schema(
     },
     password: {
       type: String,
+    },
+    otp: {
+      type: Number,
     },
   },
   { timestamps: true }
